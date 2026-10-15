@@ -1,0 +1,4 @@
+BMitra.woff
+Source: https://raw.githubusercontent.com/mrlco/persian-web-fonts/master/fonts/BMitra.woff
+Repository: https://github.com/mrlco/persian-web-fonts
+The upstream repository license is included as persian-web-fonts-LICENSE.txt.
