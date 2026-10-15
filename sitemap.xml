@@ -5,8 +5,9 @@
   <url><loc>https://vynor.ir/fa/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
   <url><loc>https://vynor.ir/blog/en/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://vynor.ir/blog/fa/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://vynor.ir/blog/posts/first-steps-in-independent-websites.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://vynor.ir/blog/posts/sourcing-electronic-components.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://vynor.ir/blog/posts/fa/first-steps-in-independent-websites.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://vynor.ir/blog/posts/fa/sourcing-electronic-components.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <url><loc>https://vynor.ir/blog/posts/001/en.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vynor.ir/blog/posts/001/fa.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vynor.ir/blog/posts/002/en.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vynor.ir/blog/posts/002/fa.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
