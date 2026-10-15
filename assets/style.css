@@ -92,7 +92,9 @@ html[lang="fa"] .card h3{font-size:1.3rem}
 html[lang="fa"] .pill,html[lang="fa"] .tags li,html[lang="fa"] .tl-date{font-size:1rem}
 html[lang="fa"] .btn{font-size:1.15rem}
 html[lang="fa"] .btn-sm{font-size:1rem}
-html[lang="fa"] .language-switch{font-family:"Segoe UI",Arial,sans-serif;font-size:.85rem}
+html[lang="fa"] .language-switch{font-size:1rem}
+/* Keep Latin runs exactly 2px smaller than their surrounding Persian text. */
+html[lang="fa"] .latin{font-family:"Segoe UI",Arial,sans-serif;font-size:calc(1em - 2px);direction:ltr;unicode-bidi:isolate}
 html[lang="fa"] .tagline{font-size:1.35rem}
 html[lang="fa"] .hero-title{line-height:1.5}
 html[lang="fa"] .hero-title,html[lang="fa"] .hero-subtitle,html[lang="fa"] .section-title,html[lang="fa"] .tl-date{letter-spacing:normal}
