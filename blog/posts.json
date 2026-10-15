@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "slug": "first-steps-in-independent-websites",
+      "en": {
+        "title": "First Steps in Building an Independent Website",
+        "summary": "A practical roadmap for launching your own site: domain, static hosting, and a minimal page structure.",
+        "date": "2026-02-10",
+        "url": "posts/first-steps-in-independent-websites.html"
+      },
+      "fa": {
+        "title": "قدم‌های اول برای ساخت وب‌سایت مستقل",
+        "summary": "نقشهٔ راه عملی برای راه‌اندازی سایت شخصی: دامنه، هاست استاتیک و ساختار حداقلی صفحه.",
+        "date": "2026-02-10",
+        "url": "posts/fa/first-steps-in-independent-websites.html"
+      }
+    },
+    {
+      "slug": "sourcing-electronic-components",
+      "en": {
+        "title": "Sourcing Electronic Components Without Getting Burned",
+        "summary": "How to buy reliable parts for prototypes: vetting suppliers, checking datasheets, and avoiding counterfeit chips.",
+        "date": "2026-01-22",
+        "url": "posts/sourcing-electronic-components.html"
+      },
+      "fa": {
+        "title": "تأمین قطعات الکترونیکی بدون دردسر",
+        "summary": "چطور برای نمونه‌سازی قطعات مطمئن بخریم: بررسی تأمین‌کننده، خواندن دیتاشیت و تشخیص قطعات تقلبی.",
+        "date": "2026-01-22",
+        "url": "posts/fa/sourcing-electronic-components.html"
+      }
+    }
+  ]
+}

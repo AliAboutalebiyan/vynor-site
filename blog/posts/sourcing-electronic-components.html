@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sourcing Electronic Components Without Getting Burned — vynor Blog</title>
+<meta name="description" content="How to buy reliable parts for prototypes: vetting suppliers, checking datasheets, and avoiding counterfeit chips.">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../blog/blog.css">
+</head>
+<body class="post-page">
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="../../en/" class="brand"><span class="brand-dot"></span><bdi class="latin" lang="en">vynor</bdi></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../en/">Blog</a>
+      <a href="../fa/" class="btn btn-ghost btn-sm language-switch" lang="fa" hreflang="fa" dir="rtl" aria-label="نمایش سایت به فارسی">فارسی</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="../../en/" class="btn btn-primary btn-sm">Home</a>
+    </div>
+  </div>
+</header>
+<main>
+  <article class="container">
+    <header class="post-header">
+      <div class="post-meta"><span class="pill date"><time datetime="2026-01-22">2026-01-22</time></span><span class="pill">Blog</span></div>
+      <h1>Sourcing Electronic Components Without Getting Burned</h1>
+    </header>
+<div class="post-body">
+<p>Nothing stalls a hardware project faster than parts that never arrive, arrive dead, or turn out to be remarked counterfeits. Here is a practical playbook for sourcing components for prototypes and small production runs.</p>
+
+<h2>1. Start from the datasheet, not the price</h2>
+<p>Before comparing vendors, confirm the part actually fits: package, voltage range, temperature rating, and lifecycle status. A component flagged "not recommended for new designs" may be cheap today and unobtainium in six months.</p>
+
+<h2>2. Buy from authorized or vetted distributors</h2>
+<ul>
+<li><strong>Authorized distributors</strong> are the safest source — they buy directly from the manufacturer.</li>
+<li><strong>Independent brokers</strong> are fine for hard-to-find parts, but check reputation, reviews, and return policy first.</li>
+<li><strong>Marketplaces</strong> are convenient for modules and dev boards, but for precision or safety-relevant parts treat every listing as unverified.</li>
+</ul>
+
+<h2>3. Spot the fakes</h2>
+<p>Common counterfeit tells:</p>
+<ul>
+<li>Printing that rubs off, misaligned or inconsistent date codes.</li>
+<li>Parts whose top marking does not match a known datasheet photo.</li>
+<li>Static-bag or reel packaging that differs from the manufacturer's standard.</li>
+</ul>
+<p>For critical batches, decap-test a sample or at least run a basic electrical characterization against the datasheet curves.</p>
+
+<h2>4. Practical habits</h2>
+<ul>
+<li>Order one extra batch of margins (typically 10–20%) for rework and ESD losses.</li>
+<li>Keep a small "long-lead-time" watchlist; order slow parts first.</li>
+<li>For passives, generic parts are fine — spend scrutiny on MCUs, power devices, and connectors.</li>
+<li>Log part numbers with vendor and date code in your BOM so problems are traceable.</li>
+</ul>
+
+<h2>5. Plan B: second sources</h2>
+<p>Where possible, design in a footprint that accepts two manufacturer alternatives. It costs nothing at layout time and saves a redesign later.</p>
+</div>
+    <nav class="post-nav">
+      <a href="../en/">&larr; Back to blog</a>
+      <a href="../fa/">فارسی &rarr;</a>
+    </nav>
+  </article>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="brand"><span class="brand-dot"></span><bdi class="latin" lang="en">vynor</bdi></span>
+    <span>&copy; 2026 <bdi class="latin" lang="en">vynor.ir</bdi> — All rights reserved.</span>
+  </div>
+</footer>
+</body>
+</html>

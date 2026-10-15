@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First Steps in Building an Independent Websites — vynor Blog</title>
+<meta name="description" content="A practical roadmap for launching your own site: domain, static hosting, and a minimal page structure.">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../blog/blog.css">
+</head>
+<body class="post-page">
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="../../en/" class="brand"><span class="brand-dot"></span><bdi class="latin" lang="en">vynor</bdi></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../en/">Blog</a>
+      <a href="../fa/" class="btn btn-ghost btn-sm language-switch" lang="fa" hreflang="fa" dir="rtl" aria-label="نمایش سایت به فارسی">فارسی</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="../../en/" class="btn btn-primary btn-sm">Home</a>
+    </div>
+  </div>
+</header>
+<main>
+  <article class="container">
+    <header class="post-header">
+      <div class="post-meta"><span class="pill date"><time datetime="2026-02-10">2026-02-10</time></span><span class="pill">Blog</span></div>
+      <h1>First Steps in Building an Independent Website</h1>
+    </header>
+<div class="post-body">
+<p>Launching your own website is easier today than it has ever been — you do not need a framework, a build pipeline, or a backend. This post walks through the minimal path from an empty folder to a live, independent site that you fully control.</p>
+
+<h2>1. Own your domain</h2>
+<p>Buy a domain from a registrar you trust and keep the registration on auto-renew. An independent site starts with an address that belongs to you, not to a social platform. Point its DNS records at your hosting provider — for a static site this usually means an <code>A</code>/<code>AAAA</code> record or a <code>CNAME</code>.</p>
+
+<h2>2. Keep it static</h2>
+<p>If your site is content and portfolio only, static hosting is enough: plain HTML, CSS and a little JavaScript served from a CDN. Benefits:</p>
+<ul>
+<li>Fast page loads and excellent SEO out of the box.</li>
+<li>Nearly zero running cost and very little to break or patch.</li>
+<li>Easy version control — the repository <em>is</em> the site.</li>
+</ul>
+
+<h2>3. A minimal, sane structure</h2>
+<pre><code>index.html
+en/index.html
+fa/index.html
+assets/style.css
+assets/script.js
+blog/index.html
+blog/posts/your-post.html
+</code></pre>
+<p>Rules of thumb that prevent most path bugs:</p>
+<ul>
+<li>Every page declares <code>lang</code> and <code>dir</code> so browsers render RTL text correctly.</li>
+<li>Shared assets live in one folder and are referenced with relative paths that match the page's depth (<code>../assets/style.css</code> one level deep, <code>../../assets/style.css</code> two levels deep).</li>
+<li>Every page links to its equivalent in the other language.</li>
+</ul>
+
+<h2>4. Write, publish, iterate</h2>
+<p>Ship the first version before it feels finished. Add a small analytics page or none at all, check the site on a phone, and validate your HTML. Once the structure works, adding a blog post is just creating one HTML file in the right folder — the rest of the site does not need to change.</p>
+
+<h3>Checklist before going live</h3>
+<ul>
+<li>Favicon and <code>&lt;title&gt;</code> on every page.</li>
+<li>Meta description per page.</li>
+<li>Relative links tested from every directory level.</li>
+<li>Mobile viewport tested.</li>
+</ul>
+</div>
+    <nav class="post-nav">
+      <a href="../en/">&larr; Back to blog</a>
+      <a href="../fa/">فارسی &rarr;</a>
+    </nav>
+  </article>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="brand"><span class="brand-dot"></span><bdi class="latin" lang="en">vynor</bdi></span>
+    <span>&copy; 2026 <bdi class="latin" lang="en">vynor.ir</bdi> — All rights reserved.</span>
+  </div>
+</footer>
+</body>
+</html>
