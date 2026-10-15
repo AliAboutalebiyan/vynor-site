@@ -9,6 +9,11 @@
 <meta property="og:description" content="AI, Control Systems & Smart Industrial Automation">
 <meta property="og:url" content="https://vynor.ir/">
 <link rel="canonical" href="https://vynor.ir/">
+<link rel="alternate" hreflang="en" href="https://vynor.ir/">
+<link rel="alternate" hreflang="fa" href="https://vynor.ir/fa/">
+<link rel="alternate" hreflang="x-default" href="https://vynor.ir/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fa_IR">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -23,8 +28,9 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-actions">
+      <a href="fa/" class="btn btn-ghost btn-sm language-switch" lang="fa" hreflang="fa" dir="rtl" aria-label="نمایش سایت به فارسی">فارسی</a>
       <a href="#contact" class="btn btn-primary btn-sm">Contact</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
@@ -157,7 +163,7 @@
     <h2 class="section-title">Contact</h2>
     <p class="section-desc">Let's build something intelligent together.</p>
     <div class="email-row">
-      <button class="btn btn-primary" id="copyEmail" data-email="info@vynor.ir">Copy Email: info@vynor.ir</button>
+      <button class="btn btn-primary" id="copyEmail" data-email="info@vynor.ir" data-copied-label="Copied ✓" aria-live="polite"><span class="copy-label">Copy Email:</span> <bdi>info@vynor.ir</bdi></button>
       <a class="btn btn-ghost" href="mailto:info@vynor.ir">Send Email</a>
     </div>
     <div class="socials">

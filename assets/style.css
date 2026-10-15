@@ -44,7 +44,7 @@ img{max-width:100%;display:block}
 .section-alt{background:var(--off);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .section-title{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;letter-spacing:-.02em;color:var(--navy)}
 .section-desc{color:var(--muted);margin-top:.5rem}
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2.25rem}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:1.5rem;margin-top:2.25rem}
 .card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.75rem;transition:transform .25s,box-shadow .25s,border-color .25s}
 .card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(15,23,42,.08);border-color:var(--border2)}
 .card-icon{font-size:1.6rem;width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:#EEF2FF;border:1px solid #DBEAFE;border-radius:12px;margin-bottom:1rem}
@@ -53,13 +53,13 @@ img{max-width:100%;display:block}
 .tags{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem}
 .tags li{font-size:.72rem;font-weight:600;color:var(--blue);background:#F1F5F9;border:1px solid var(--border);border-radius:6px;padding:.2rem .55rem}
 .bullets{list-style:none;margin:.5rem 0 1rem;display:grid;gap:.5rem}
-.bullets li{position:relative;padding-left:1.1rem;color:var(--muted);font-size:.92rem}
-.bullets li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:2px;background:var(--accent)}
+.bullets li{position:relative;padding-inline-start:1.1rem;color:var(--muted);font-size:.92rem}
+.bullets li::before{content:"";position:absolute;inset-inline-start:0;top:.55em;width:6px;height:6px;border-radius:2px;background:var(--accent)}
 /* Timeline */
-.timeline{list-style:none;margin-top:2.5rem;position:relative;padding-left:2rem}
-.timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--border))}
+.timeline{list-style:none;margin-top:2.5rem;position:relative;padding-inline-start:2rem}
+.timeline::before{content:"";position:absolute;inset-inline-start:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--border))}
 .tl-item{position:relative;padding-bottom:2rem}
-.tl-marker{position:absolute;left:-2rem;top:4px;width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--accent);box-shadow:0 0 0 4px #EEF2FF}
+.tl-marker{position:absolute;inset-inline-start:-2rem;top:4px;width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--accent);box-shadow:0 0 0 4px #EEF2FF}
 .tl-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem;transition:border-color .25s,box-shadow .25s}
 .tl-card:hover{border-color:var(--border2);box-shadow:0 12px 28px rgba(15,23,42,.07)}
 .tl-date{font-size:.78rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em}
@@ -75,6 +75,15 @@ img{max-width:100%;display:block}
 .footer{background:var(--navy);color:#CBD5E1;padding:2rem 0}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .footer .brand{color:#fff}
+/* Language and bidirectional text */
+.language-switch{white-space:nowrap}
+.brand,bdi{direction:ltr;unicode-bidi:isolate}
+html[lang="fa"] body{font-family:Tahoma,"Segoe UI",Arial,sans-serif;line-height:1.9}
+html[lang="fa"] .hero-title{line-height:1.5}
+html[lang="fa"] .hero-title,html[lang="fa"] .hero-subtitle,html[lang="fa"] .section-title,html[lang="fa"] .tl-date{letter-spacing:normal}
+.tags li{unicode-bidi:plaintext}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+section[id]{scroll-margin-top:80px}
 /* Responsive */
 @media(max-width:860px){
   .hero-grid{grid-template-columns:1fr;padding:3.5rem 1.25rem;text-align:center}
@@ -85,6 +94,13 @@ img{max-width:100%;display:block}
   .nav-toggle{display:flex}
 }
 @media(max-width:520px){
+  .nav-inner{gap:.5rem}
+  .nav-actions{gap:.4rem}
+  .nav-actions .btn-sm{padding:.4rem .65rem}
   .section{padding:3rem 0}
   .footer-inner{justify-content:center;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
 }

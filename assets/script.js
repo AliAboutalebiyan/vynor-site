@@ -16,13 +16,16 @@ if (toggle && links) {
 // Copy email button
 const copyBtn = document.getElementById('copyEmail');
 if (copyBtn) {
+  const copyLabel = copyBtn.querySelector('.copy-label');
+  const originalLabel = copyLabel.textContent;
+  let resetCopyLabel;
   copyBtn.addEventListener('click', async () => {
     const email = copyBtn.dataset.email;
     try {
       await navigator.clipboard.writeText(email);
-      const original = copyBtn.textContent;
-      copyBtn.textContent = 'Copied ✓ ' + email;
-      setTimeout(() => (copyBtn.textContent = original), 1800);
+      clearTimeout(resetCopyLabel);
+      copyLabel.textContent = copyBtn.dataset.copiedLabel;
+      resetCopyLabel = setTimeout(() => (copyLabel.textContent = originalLabel), 1800);
     } catch (e) {
       window.location.href = 'mailto:' + email;
     }
@@ -30,6 +33,7 @@ if (copyBtn) {
 }
 
 // Subtle reveal-on-scroll for cards
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 const io = new IntersectionObserver((entries) => {
   entries.forEach(en => {
     if (en.isIntersecting) { en.target.style.opacity = 1; en.target.style.transform = 'none'; io.unobserve(en.target); }
@@ -41,3 +45,4 @@ document.querySelectorAll('.card, .tl-item').forEach((el, i) => {
   el.style.transition = 'opacity .5s ease ' + (i % 4) * 0.06 + 's, transform .5s ease ' + (i % 4) * 0.06 + 's';
   io.observe(el);
 });
+}
