@@ -82,6 +82,9 @@ img{max-width:100%;display:block}
 .footer{background:var(--navy);color:#CBD5E1;padding:2rem 0}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .footer .brand{color:#fff}
+/* English typography: Times New Roman for the English version. */
+html[lang="en"] body{font-family:"Times New Roman",Times,Georgia,serif}
+
 /* Language and bidirectional text */
 .language-switch{white-space:nowrap}
 .brand,bdi{direction:ltr;unicode-bidi:isolate}
