@@ -45,7 +45,7 @@ img{max-width:100%;display:block}
 .bio{margin-top:.9rem;color:var(--muted);max-width:56ch}
 .cta-row{display:flex;gap:.9rem;margin-top:1.75rem;flex-wrap:wrap}
 .hero-visual{display:flex;justify-content:center}
-.avatar{width:min(260px,70vw);height:auto;filter:drop-shadow(0 24px 40px rgba(30,58,138,.18))}
+.avatar{width:min(260px,70vw);height:auto;aspect-ratio:1;object-fit:cover;object-position:50% 25%;border-radius:24px;filter:drop-shadow(0 24px 40px rgba(30,58,138,.18))}
 /* Sections */
 .section{padding:4.5rem 0}
 .section-alt{background:var(--off);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
