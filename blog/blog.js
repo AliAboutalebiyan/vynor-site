@@ -1,18 +1,10 @@
-/* blog/blog.js — renders the post list on blog/en/index.html and blog/fa/index.html
- * Usage: <script src="../../blog/blog.js"></script>  (from blog/<lang>/index.html)
- * Add a post: create the HTML file(s) under blog/posts/ and add a record to blog/posts.json.
- */
+/* blog/blog.js — renders the post list on blog/en/index.html and blog/fa/index.html */
 (function () {
   "use strict";
 
-  // Resolve posts.json relative to this script, so it works from any blog page.
-  var scriptSrc = document.currentScript && document.currentScript.src
-    ? document.currentScript.src : "";
-  var postsUrl = scriptSrc
-    ? new URL("../posts.json", scriptSrc).href   // -> <site>/blog/posts.json
-    : "../../blog/posts.json";                   // fallback (same file)
-
-  var lang = (document.documentElement.lang || "en").toLowerCase().slice(0, 2);
+  var script = document.currentScript;
+  var postsUrl = script && script.src ? new URL("posts.json", script.src).href : "posts.json";
+  var lang = (document.documentElement.lang || "en").toLowerCase().slice(0, 2) === "fa" ? "fa" : "en";
   var isRTL = lang === "fa";
   var listEl = document.getElementById("posts");
   var statusEl = document.getElementById("postStatus");
@@ -23,27 +15,18 @@
       .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
   }
 
-  // Normalize a record URL to a site-relative link that works from blog/<lang>/.
-  // "posts/foo.html"            -> ../posts/foo.html
-  // "/posts/foo.html" (absolute)-> ../../posts/foo.html
-  // full http(s) URL            -> kept as-is
+  // Resolve a record URL to a link that works from blog/<lang>/index.html
   function toLocalLink(url) {
     if (!url) return "#";
     if (/^https?:\/\//i.test(url)) return url;
-    if (url.charAt(0) === "/") {
-      // absolute from site root: strip leading slash, walk up from blog/<lang>/
-      var depth = 2; // we are two levels below the site root
-      var rel = "";
-      for (var i = 0; i < depth; i++) rel += "../";
-      return rel + url.replace(/^\/+/, "");
-    }
-    return "../" + url.replace(/^\.\//, "");
+    if (url.charAt(0) === "/") return "../../" + url.replace(/^\/+/, "");
+    return "../" + String(url).replace(/^\.\//, ""); // e.g. "posts/x.html" -> "../posts/x.html"
   }
 
   function showStatus(msg) {
     if (statusEl) {
       statusEl.textContent = msg;
-      statusEl.setAttribute(!isRTL ? "dir" : "dir", isRTL ? "rtl" : "ltr");
+      statusEl.setAttribute("dir", isRTL ? "rtl" : "ltr");
     }
   }
 
@@ -55,8 +38,8 @@
       return res.json();
     })
     .then(function (data) {
-      var recs = (data && (data.posts || data)) || [];
-      if (!Array.isArray(recs)) throw new Error("Unexpected posts.json format");
+      var recs = data && Array.isArray(data) ? data : (data && Array.isArray(data.posts) ? data.posts : null);
+      if (!recs) throw new Error("Unexpected posts.json format");
 
       var items = recs
         .map(function (r) { return r && (r[lang] || r); })

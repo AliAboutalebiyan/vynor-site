@@ -3,22 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>وبلاگ — واینور | به‌زودی</title>
-<meta name="description" content="وبلاگ واینور (علی ابوطالبیان) — به‌زودی.">
-<meta name="robots" content="noindex, follow">
+<title>وبلاگ — واینور | علی ابوطالبیان</title>
+<meta name="description" content="وبلاگ واینور (علی ابوطالبیان) — یادداشت‌هایی درباره هوش مصنوعی لبه، سیستم‌های کنترل و اتوماسیون صنعتی.">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://vynor.ir/blog/fa/">
 <link rel="alternate" hreflang="fa" href="https://vynor.ir/blog/fa/">
 <link rel="alternate" hreflang="en" href="https://vynor.ir/blog/en/">
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
-<link rel="stylesheet" href="../../assets/style.css?v=typography-1">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../blog.css">
 </head>
 <body>
 <header class="navbar">
   <div class="container nav-inner">
     <a href="#hero" class="brand"><span class="brand-dot"></span><bdi class="latin" lang="en">vynor</bdi></a>
-    <nav class="nav-links" id="navLinks"><a href="#hero">آغاز</a><a href="../fa/#projects">پروژه‌ها</a><a href="../fa/#contact">تماس</a><a href="../../en/" class="btn btn-ghost btn-sm language-switch" lang="en" hreflang="en" dir="ltr" aria-label="View site in English"><bdi class="latin" lang="en">English</bdi></a></nav>
+    <nav class="nav-links" id="navLinks"><a href="../../fa/">خانه</a><a href="../../fa/#projects">پروژه‌ها</a><a href="../../fa/#contact">تماس</a><a href="../en/" class="btn btn-ghost btn-sm language-switch" lang="en" hreflang="en" dir="ltr" aria-label="View site in English"><bdi class="latin" lang="en">English</bdi></a></nav>
     <div class="nav-actions">
-      <a href="../../en/" class="btn btn-primary btn-sm">تماس</a>
+      <a href="../../fa/#contact" class="btn btn-primary btn-sm">تماس</a>
       <button class="nav-toggle" id="navToggle" aria-label="فهرست" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -28,11 +29,15 @@
   <div class="container hero-grid">
     <div class="hero-text">
       <div class="hero-badges"><span class="pill">وبلاگ</span></div>
-      <h1 class="hero-title">وبلاگ <span class="hero-subtitle">به‌زودی</span></h1>
+      <h1 class="hero-title">وبلاگ</h1>
       <p class="tagline">یادداشت‌هایی درباره هوش مصنوعی لبه، سیستم‌های کنترل و اتوماسیون صنعتی</p>
-      <p class="bio">نوشته‌ها به‌زودی منتشر می‌شوند. تا آن زمان می‌توانید <a href="../fa/#projects">پروژه‌ها</a> را ببینید یا برای <a href="../fa/#contact">ارتباط با من</a> اقدام کنید.</p>
+      <p class="bio">نوشته‌ها به‌زودی منتشر می‌شوند. تا آن زمان می‌توانید <a href="../../fa/#projects">پروژه‌ها</a> را ببینید یا برای <a href="../fa/#contact">ارتباط با من</a> اقدام کنید.</p>
     </div>
   </div>
+</section>
+<section class="container" aria-label="نوشته‌ها">
+  <div id="posts" class="posts-grid"></div>
+  <p id="postStatus" class="post-status" role="status"></p>
 </section>
 </main>
 <footer class="footer">
@@ -42,5 +47,6 @@
   </div>
 </footer>
 <script src="../../assets/script.js"></script>
+<script src="../blog.js" defer></script>
 </body>
 </html>
