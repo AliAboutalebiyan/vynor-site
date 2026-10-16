@@ -13,7 +13,7 @@
 .post-status{margin:1rem 0;font-size:.9rem;opacity:.8}
 
 /* single post pages */
-.post-page .container{max-width:46rem}
+.post-page main > .container{max-width:46rem}
 .post-header{margin:2.5rem 0 1.5rem}
 .post-header h1{font-size:1.9rem;line-height:1.35;margin:.4rem 0 .8rem}
 .post-header .post-meta{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;font-size:.85rem;opacity:.8}
@@ -23,9 +23,10 @@
 .post-body p{margin:.8rem 0}
 .post-body ul,.post-body ol{margin:.8rem 0;padding-inline-start:1.5rem}
 .post-body li{margin:.35rem 0}
-.post-body pre{overflow-x:auto;padding:1rem;border-radius:10px;background:rgba(128,128,128,.12);font-size:.88rem;line-height:1.6}
+.post-body pre{direction:ltr;text-align:left;overflow-x:auto;padding:1rem;border-radius:10px;background:rgba(128,128,128,.12);font-size:.88rem;line-height:1.6}
 .post-body code{background:rgba(128,128,128,.15);padding:.1em .35em;border-radius:5px;font-size:.9em}
 .post-body pre code{background:none;padding:0}
+html[lang="fa"] .post-body code{font-size:inherit}
 .post-nav{display:flex;justify-content:space-between;gap:1rem;margin:2.5rem 0 3rem;font-size:.95rem}
 .lang-switch-line{margin-top:1rem;font-size:.9rem}
 
@@ -33,17 +34,3 @@
   .post-header h1{font-size:1.5rem}
   .post-card{padding:1rem 1.1rem}
 }
-
-
-/* fixed language toggle — one square button, same physical spot on every blog page */
-.blog-lang-toggle{
-  position:fixed;
-  right:calc(1rem + env(safe-area-inset-right, 0px));
-  bottom:calc(1rem + env(safe-area-inset-bottom, 0px));
-  width:40px;height:40px;min-width:40px;min-height:40px;
-  display:flex;align-items:center;justify-content:center;
-  border:1px solid rgba(128,128,128,.4);border-radius:10px;
-  background:rgba(20,20,20,.85);color:#fff;text-decoration:none;
-  font-size:.85rem;font-weight:600;z-index:9999;line-height:1;padding:0;
-}
-.blog-lang-toggle:hover,.blog-lang-toggle:focus-visible{border-color:currentColor}

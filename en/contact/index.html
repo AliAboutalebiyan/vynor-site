@@ -18,7 +18,7 @@
 <meta name="twitter:title" content="Contact — Ali Aboutalebiyan (vynor)">
 <meta name="twitter:description" content="Get in touch for Edge AI, computer vision, control systems, and smart industrial automation.">
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
-<link rel="stylesheet" href="../../assets/style.css?v=portrait-1">
+<link rel="stylesheet" href="../../assets/style.css?v=layout-2">
 <style>
 .contact-page-hero {
   padding: 6rem 0 3rem;
@@ -26,14 +26,14 @@
 }
 .contact-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 1.5rem;
   margin-top: 2.5rem;
   text-align: left;
 }
 .contact-item-card {
-  background: var(--surface, #1e293b);
-  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  background: var(--white);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.5rem;
   display: flex;
@@ -43,23 +43,23 @@
 }
 .contact-item-card:hover {
   transform: translateY(-2px);
-  border-color: var(--blue, #38bdf8);
+  border-color: var(--blue);
 }
 .contact-item-title {
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--text-muted, #94a3b8);
+  color: var(--muted);
   font-weight: 600;
 }
 .contact-item-value {
   font-size: 1.05rem;
   font-weight: 500;
-  color: var(--text, #f8fafc);
+  color: var(--text);
   word-break: break-all;
 }
 .contact-item-value a {
-  color: var(--blue, #38bdf8);
+  color: var(--blue);
   text-decoration: none;
 }
 .contact-item-value a:hover {
@@ -71,16 +71,17 @@
 
 <header class="navbar">
   <div class="container nav-inner">
-    <a href="../" class="brand"><span class="brand-dot"></span>vynor</a>
+    <a href="../../en/" class="brand"><span class="brand-dot"></span>vynor</a>
     <nav class="nav-links" id="navLinks">
-      <a href="../#skills">Skills</a>
-      <a href="../#projects">Projects</a>
-      <a href="../#experience">Experience</a>
-      <a href="./" class="active">Contact</a>
+      <a href="../../en/#skills">Skills</a>
+      <a href="../../en/#projects">Projects</a>
+      <a href="../../en/#experience">Experience</a>
+      <a href="./" aria-current="page">Contact</a>
       <a href="../../blog/en/">Blog</a>
     </nav>
     <div class="nav-actions">
       <a href="../../fa/contact/" class="btn btn-ghost btn-sm language-switch" lang="fa" hreflang="fa" dir="rtl" aria-label="نمایش سایت به فارسی">فارسی</a>
+      <a href="./" class="btn btn-primary btn-sm">Contact</a>
       <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -108,7 +109,7 @@
           <div class="contact-item-value">
             <a href="https://linkedin.com/in/ali-aboutalebiyan" target="_blank" rel="noopener">ali-aboutalebiyan</a>
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted, #94a3b8); margin-top: auto;">Professional network &amp; career updates</p>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-top: auto;">Professional network &amp; career updates</p>
         </div>
 
         <div class="contact-item-card">
@@ -116,7 +117,7 @@
           <div class="contact-item-value">
             <a href="https://github.com/vynor" target="_blank" rel="noopener">github.com/vynor</a>
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted, #94a3b8); margin-top: auto;">Open source code &amp; repositories</p>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-top: auto;">Open source code &amp; repositories</p>
         </div>
 
         <div class="contact-item-card">
@@ -124,7 +125,7 @@
           <div class="contact-item-value">
             <a href="https://t.me/vynor" target="_blank" rel="noopener">@vynor</a>
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted, #94a3b8); margin-top: auto;">Direct messaging &amp; quick chat</p>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-top: auto;">Direct messaging &amp; quick chat</p>
         </div>
       </div>
 

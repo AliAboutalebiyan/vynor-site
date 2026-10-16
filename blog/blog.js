@@ -58,9 +58,10 @@
       listEl.innerHTML = items.map(function (r) {
         var href = toLocalLink(r.url);
         var date = escapeHTML(r.date || "");
+        var dateLabel = isRTL ? '<bdi class="latin" lang="en">' + date + "</bdi>" : date;
         return '<a class="post-card" lang="' + escapeHTML(lang) + '" href="' + escapeHTML(href) + '">' +
           '<div class="post-meta">' +
-            (date ? '<span class="pill date"><time datetime="' + date + '">' + date + "</time></span>" : "") +
+            (date ? '<span class="pill date"><time datetime="' + date + '">' + dateLabel + "</time></span>" : "") +
           "</div>" +
           "<h3>" + escapeHTML(r.title) + "</h3>" +
           (r.summary ? "<p>" + escapeHTML(r.summary) + "</p>" : "") +

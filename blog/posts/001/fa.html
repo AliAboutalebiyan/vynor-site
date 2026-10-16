@@ -9,64 +9,70 @@
 <link rel="alternate" hreflang="fa" href="https://vynor.ir/blog/posts/001/fa.html">
 <link rel="alternate" hreflang="en" href="https://vynor.ir/blog/posts/001/en.html">
 <link rel="icon" type="image/svg+xml" href="../../../assets/favicon.svg">
-<link rel="stylesheet" href="../../../assets/style.css">
-<link rel="stylesheet" href="../../../blog/blog.css">
+<link rel="stylesheet" href="../../../assets/style.css?v=layout-2">
+<link rel="stylesheet" href="../../../blog/blog.css?v=layout-2">
 </head>
 <body class="post-page">
 <header class="navbar">
   <div class="container nav-inner">
     <a href="../../../fa/" class="brand"><span class="brand-dot"></span><bdi class="latin" lang="en">vynor</bdi></a>
     <nav class="nav-links" id="navLinks">
-      <a href="/blog/fa/">وبلاگ</a>
+      <a href="../../../fa/#skills">مهارت‌ها</a>
+      <a href="../../../fa/#projects">پروژه‌ها</a>
+      <a href="../../../fa/#experience">سوابق</a>
+      <a href="../../../fa/contact/">تماس</a>
+      <a href="../../../blog/fa/" aria-current="location">وبلاگ</a>
     </nav>
     <div class="nav-actions">
-      <a href="../../../fa/" class="btn btn-primary btn-sm">خانه</a>
+      <a href="en.html" class="btn btn-ghost btn-sm language-switch" lang="en" hreflang="en" dir="ltr" aria-label="View site in English"><bdi class="latin" lang="en">English</bdi></a>
+      <a href="../../../fa/contact/" class="btn btn-primary btn-sm">تماس</a>
+      <button class="nav-toggle" id="navToggle" aria-label="فهرست" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 <main>
   <article class="container">
     <header class="post-header">
-      <div class="post-meta"><span class="pill date"><time datetime="2026-02-10">2026-02-10</time></span><span class="pill">وبلاگ</span></div>
+      <div class="post-meta"><span class="pill date"><time datetime="2026-02-10"><bdi class="latin" lang="en">2026-02-10</bdi></time></span><span class="pill">وبلاگ</span></div>
       <h1>قدم‌های اول برای ساخت وب‌سایت مستقل</h1>
     </header>
 <div class="post-body">
-<p>راه‌اندازی وب‌سایت شخصی امروز ساده‌تر از همیشه است — نه به فریم‌ورک نیاز دارید، نه پایتلاین build و نه بک‌اند. در این نوشته کوتاه‌ترین مسیر از یک پوشهٔ خالی تا یک سایت زنده و کاملاً در اختیار خودتان را مرور می‌کنیم.</p>
+<p>راه‌اندازی وب‌سایت شخصی امروز ساده‌تر از همیشه است — نه به فریم‌ورک نیاز دارید، نه پایتلاین <bdi class="latin" lang="en">build</bdi> و نه بک‌اند. در این نوشته کوتاه‌ترین مسیر از یک پوشهٔ خالی تا یک سایت زنده و کاملاً در اختیار خودتان را مرور می‌کنیم.</p>
 
 <h2>۱. مالک دامنهٔ خود باشید</h2>
-<p>دامنه را از یک ثبت‌کنندهٔ معتبر بخرید و تمدید خودکار را فعال کنید. سایت مستقل با آدرسی شروع می‌شود که متعلق به خودتان است، نه یک پلتفرم اجتماعی. رکوردهای DNS را به میزبان خود اشاره دهید؛ برای سایت استاتیک معمولاً یک رکورد <code>A</code>/<code>AAAA</code> یا <code>CNAME</code> کافی است.</p>
+<p>دامنه را از یک ثبت‌کنندهٔ معتبر بخرید و تمدید خودکار را فعال کنید. سایت مستقل با آدرسی شروع می‌شود که متعلق به خودتان است، نه یک پلتفرم اجتماعی. رکوردهای <bdi class="latin" lang="en">DNS</bdi> را به میزبان خود اشاره دهید؛ برای سایت استاتیک معمولاً یک رکورد <code><bdi class="latin" lang="en">A</bdi></code>/<code><bdi class="latin" lang="en">AAAA</bdi></code> یا <code><bdi class="latin" lang="en">CNAME</bdi></code> کافی است.</p>
 
 <h2>۲. استاتیک نگهش دارید</h2>
-<p>اگر سایت شما فقط محتوا و نمونه‌کار است، میزبانی استاتیک کافی است: HTML و CSS ساده و کمی جاوااسکریپت روی CDN. مزایا:</p>
+<p>اگر سایت شما فقط محتوا و نمونه‌کار است، میزبانی استاتیک کافی است: <bdi class="latin" lang="en">HTML</bdi> و <bdi class="latin" lang="en">CSS</bdi> ساده و کمی جاوااسکریپت روی <bdi class="latin" lang="en">CDN</bdi>. مزایا:</p>
 <ul>
-<li>سرعت بارگذاری بالا و SEO خوب بدون تلاش اضافه.</li>
+<li>سرعت بارگذاری بالا و <bdi class="latin" lang="en">SEO</bdi> خوب بدون تلاش اضافه.</li>
 <li>هزینهٔ اجرایی تقریباً صفر و موارد نگهداری بسیار کم.</li>
 <li>مدیریت نسخهٔ ساده — همان مخزن گیت، همان سایت است.</li>
 </ul>
 
 <h2>۳. ساختار حداقلی و منظم</h2>
-<pre><code>index.html
+<pre><code><bdi class="latin" lang="en">index.html
 en/index.html
 fa/index.html
 assets/style.css
 assets/script.js
 blog/index.html
 blog/posts/your-post.html
-</code></pre>
+</bdi></code></pre>
 <p>چند قاعدهٔ کاربردی که بیشتر باگ‌های مسیر را پیشگیری می‌کند:</p>
 <ul>
-<li>هر صفحه <code>lang</code> و <code>dir</code> را تعیین کند تا متن راست‌به‌چپ درست نمایش داده شود.</li>
-<li>فایل‌های مشترک در یک پوشه باشند و مسیر نسبی دقیقاً هم‌عمق صفحه باشد (<code>../assets/style.css</code> یک سطح، <code>../../assets/style.css</code> دو سطح عمیق‌تر).</li>
+<li>هر صفحه <code><bdi class="latin" lang="en">lang</bdi></code> و <code><bdi class="latin" lang="en">dir</bdi></code> را تعیین کند تا متن راست‌به‌چپ درست نمایش داده شود.</li>
+<li>فایل‌های مشترک در یک پوشه باشند و مسیر نسبی دقیقاً هم‌عمق صفحه باشد (<code><bdi class="latin" lang="en">../assets/style.css</bdi></code> یک سطح، <code><bdi class="latin" lang="en">../../assets/style.css</bdi></code> دو سطح عمیق‌تر).</li>
 <li>هر صفحه به معادل خود در زبان دیگر لینک بدهد.</li>
 </ul>
 
 <h2>۴. بنویسید، منتشر کنید، بهبود دهید</h2>
-<p>نسخهٔ اول را قبل از اینکه «کامل» به نظر برسد منتشر کنید. سایت را روی موبایل بررسی کنید و HTML را اعتبارسنجی کنید. وقتی ساختار درست شد، افزودن یک پست فقط ساخت یک فایل HTML در مسیر درست است و بقیهٔ سایت نیازی به تغییر ندارد.</p>
+<p>نسخهٔ اول را قبل از اینکه «کامل» به نظر برسد منتشر کنید. سایت را روی موبایل بررسی کنید و <bdi class="latin" lang="en">HTML</bdi> را اعتبارسنجی کنید. وقتی ساختار درست شد، افزودن یک پست فقط ساخت یک فایل <bdi class="latin" lang="en">HTML</bdi> در مسیر درست است و بقیهٔ سایت نیازی به تغییر ندارد.</p>
 
 <h3>چک‌لیست قبل از انتشار</h3>
 <ul>
-<li>فاوآیکن و <code>&lt;title&gt;</code> در همهٔ صفحه‌ها.</li>
-<li>توضیح متا (meta description) برای هر صفحه.</li>
+<li>فاوآیکن و <code><bdi class="latin" lang="en">&lt;title&gt;</bdi></code> در همهٔ صفحه‌ها.</li>
+<li>توضیح متا (<bdi class="latin" lang="en">meta description</bdi>) برای هر صفحه.</li>
 <li>آزمودن لینک‌های نسبی از همهٔ سطوح پوشه‌ها.</li>
 <li>بررسی نمای موبایل.</li>
 </ul>
@@ -79,9 +85,9 @@ blog/posts/your-post.html
 <footer class="footer">
   <div class="container footer-inner">
     <span class="brand"><span class="brand-dot"></span><bdi class="latin" lang="en">vynor</bdi></span>
-    <span>&copy; 2026 <bdi class="latin" lang="en">vynor.ir</bdi> — تمامی حقوق محفوظ است.</span>
+    <span>&copy; ۲۰۲۶ <bdi class="latin" lang="en">vynor.ir</bdi> — تمامی حقوق محفوظ است.</span>
   </div>
 </footer>
-<a href="/blog/en/" class="blog-lang-toggle" lang="en" hreflang="en" dir="ltr" aria-label="View blog in English">EN</a>
+<script src="../../../assets/script.js"></script>
 </body>
 </html>

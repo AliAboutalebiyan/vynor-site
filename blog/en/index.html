@@ -10,16 +10,23 @@
 <link rel="alternate" hreflang="en" href="https://vynor.ir/blog/en/">
 <link rel="alternate" hreflang="fa" href="https://vynor.ir/blog/fa/">
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
-<link rel="stylesheet" href="../../assets/style.css">
-<link rel="stylesheet" href="../blog.css">
+<link rel="stylesheet" href="../../assets/style.css?v=layout-2">
+<link rel="stylesheet" href="../blog.css?v=layout-2">
 </head>
 <body>
 <header class="navbar">
   <div class="container nav-inner">
-    <a href="/en/" class="brand"><span class="brand-dot"></span><bdi class="latin" lang="en">vynor</bdi></a>
-    <nav class="nav-links" id="navLinks"><a href="../../en/#skills">Skills</a><a href="../../en/#projects">Projects</a><a href="../../en/#contact">Contact</a></nav>
+    <a href="../../en/" class="brand"><span class="brand-dot"></span>vynor</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../../en/#skills">Skills</a>
+      <a href="../../en/#projects">Projects</a>
+      <a href="../../en/#experience">Experience</a>
+      <a href="../../en/contact/">Contact</a>
+      <a href="../../blog/en/" aria-current="page">Blog</a>
+    </nav>
     <div class="nav-actions">
-      <a href="/en/" class="btn btn-primary btn-sm">Home</a>
+      <a href="../../blog/fa/" class="btn btn-ghost btn-sm language-switch" lang="fa" hreflang="fa" dir="rtl" aria-label="نمایش سایت به فارسی">فارسی</a>
+      <a href="../../en/contact/" class="btn btn-primary btn-sm">Contact</a>
       <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -36,7 +43,7 @@
   </div>
 </section>
 <section class="container" aria-label="Posts">
-  <div id="posts" class="posts-grid"></div>
+  <div id="posts" class="posts-list"></div>
   <p id="postStatus" class="post-status" role="status"></p>
 </section>
 </main>
@@ -48,6 +55,5 @@
 </footer>
 <script src="../../assets/script.js"></script>
 <script src="../blog.js" defer></script>
-<a href="/blog/fa/" class="blog-lang-toggle" lang="fa" hreflang="fa" dir="rtl" aria-label="نمایش وبلاگ به فارسی">فا</a>
 </body>
 </html>
