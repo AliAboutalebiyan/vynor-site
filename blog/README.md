@@ -1,49 +1,75 @@
-# Blog — how it works
+# انتشار بلاگ با آپلود یک پوشه
 
-This blog is **file-based and bilingual** (English + Persian). Posts live in
-**numbered folders** so each story (in both languages) is managed by one number:
+برای هر نوشته فقط یک پوشه در `blog/posts/` نگه دارید. فایل فهرست دستی نداریم؛ هنگام انتشار، عنوان، خلاصه و تاریخ از خود مقاله‌ها خوانده می‌شود و فهرست فارسی، فهرست انگلیسی و نقشهٔ سایت خودکار ساخته می‌شوند.
 
-```
-blog/
-├── blog.js                  # renders the post list from posts.json
-├── blog.css                 # shared styles (RTL + LTR)
-├── posts.json               # the post index (single source of truth)
-├── en/index.html            # English blog listing
-├── fa/index.html            # Persian blog listing
-└── posts/
-    └── 001/
-        ├── en.html          # English version of post 001
-        └── fa.html          # Persian version of post 001
-```
+## راه‌اندازی اولیه، فقط یک بار
 
-Each numbered folder (`001`, `002`, …) contains both language versions of one
-story. To manage posts later, work by number: `001` is the first post, and both
-`en.html` and `fa.html` inside it must stay in sync.
+1. تغییرات این پروژه را در شاخهٔ `main` مخزن GitHub آپلود کنید؛ پوشه‌های `.github` و `scripts` و `tests` هم باید همراهشان باشند. پوشهٔ خروجی `_site` را آپلود نکنید.
+2. در مخزن به **Settings → Pages → Build and deployment → Source** بروید و **GitHub Actions** را انتخاب کنید.
+3. در بخش **Actions**، گردش‌کار **Build and publish Vynor** را اجرا کنید؛ اگر اجرای قبلی به‌خاطر تنظیم‌نبودن Pages ناموفق بود، آن را دوباره اجرا کنید.
 
-## Adding a new post (3 steps)
+پس از این راه‌اندازی، هر بار تغییرات در `main` ثبت شوند، سایت خودکار ساخته و منتشر می‌شود. نیازی به ساخت توکن، ویرایش فهرست یا اجرای فرمان روی رایانه نیست. تنظیمات دامنهٔ سفارشی همان `vynor.ir` باقی می‌ماند.
 
-1. **Create the next numbered folder**, e.g. `blog/posts/003/`, and copy the
-   body/content of an existing post into `003/en.html` and `003/fa.html`.
+## نوشتن و انتشار مطلب بعدی
 
-2. **Edit the content and metadata** in each file:
-   - `<title>`, `<meta name="description">`, `<h1>` and the body.
-   - `<time datetime="YYYY-MM-DD">` and the visible date.
-   - The language toggle (`.blog-lang-toggle`) already points to the sibling
-     file (`/blog/posts/003/fa.html` ↔ `/blog/posts/003/en.html`).
+1. از پوشهٔ **`blog/post-template`** یک کپی بگیرید و نام آن را شمارهٔ مطلب بگذارید؛ مثلاً `004`. در پروژهٔ فعلی `003` از قبل وجود دارد.
+2. در `fa.html` و `en.html` فقط چهار مورد را تکمیل کنید:
+   - عنوان داخل `<h1>`؛ عنوان تب مرورگر خودکار از آن ساخته می‌شود.
+   - خلاصه در `<meta name="description" content="...">`.
+   - تاریخ میلادی داخل `datetime="YYYY-MM-DD"`؛ مثلاً `datetime="2026-10-16"`. تاریخ نمایشی خودکار از این مقدار ساخته می‌شود.
+   - متن مقاله داخل `<div class="post-body">`.
+3. پوشهٔ آماده را **با هر دو فایل زبان در یک بار آپلود** داخل مسیر `blog/posts/` مخزن قرار دهید و تغییر را در `main` ثبت کنید.
 
-3. **Register it in `blog/posts.json`** with a matching `id`:
-
-```json
-{
-  "id": "003",
-  "slug": "my-new-post",
-  "en": { "title": "...", "summary": "...", "date": "2026-03-01",
-          "url": "posts/003/en.html" },
-  "fa": { "title": "...", "summary": "...", "date": "2026-03-01",
-          "url": "posts/003/fa.html" }
-}
+```text
+blog/posts/004/
+├── fa.html
+├── en.html
+└── images/       # اختیاری؛ تصاویر همین مقاله
 ```
 
-The listing pages (`blog/en/`, `blog/fa/`) pick it up automatically via
-`blog.js`. Paths are depth-dependent: pages in `blog/posts/NNN/` use
-`../../../assets/style.css` and `../../../blog/blog.css`.
+تمام کارهای هر مطلب در همین پوشه انجام می‌شود. نیازی به تغییر `sitemap.xml`، صفحه‌های فهرست بلاگ، شماره در آدرس‌های canonical یا هدر نیست. هدر مقاله‌ها هنگام ساخت از هدر صفحهٔ اصلی همان زبان گرفته می‌شود؛ دکمهٔ زبان به فایل همسایه می‌رود و جای کلیدها ثابت می‌ماند.
+
+شماره‌ها لازم نیست پشت سر هم باشند؛ `007` یا `1000` هم شناخته می‌شود. ترتیب نمایش بر اساس تاریخ از جدید به قدیم است و در تاریخ برابر، شمارهٔ بزرگ‌تر بالاتر قرار می‌گیرد. پوشه‌های بدون نام عددی منتشر نمی‌شوند.
+
+فهرست در HTML نهایی قرار دارد و برای دیده‌شدن مقاله‌ها نیازی به JavaScript یا درخواست به API گیت‌هاب نیست.
+
+## تصویر، کد و متن لاتین
+
+تصاویر مقاله را داخل همان پوشه نگه دارید و با مسیر نسبی استفاده کنید:
+
+```html
+<img src="images/example.jpg" alt="توضیح تصویر">
+```
+
+در نسخهٔ فارسی، هر عبارت لاتین را فقط یک‌بار با کلاس مشترک علامت بزنید:
+
+```html
+<p>این نمونه با <bdi class="latin" lang="en">Python</bdi> نوشته شده است.</p>
+```
+
+کلاس‌های `latin` را داخل هم قرار ندهید. فونت فارسی B Mitra است و متن لاتین دقیقاً ۲ پیکسل کوچک‌تر می‌شود. عبارت‌های لاتین عنوان و خلاصه در کارت فهرست، خودکار علامت‌گذاری می‌شوند.
+
+## پیش‌نویس، ویرایش و حذف
+
+- **پیش‌نویس:** یک فایل خالی به نام `.draft` داخل پوشهٔ مقاله بگذارید. آن پوشه، حتی فایل‌های HTML و تصاویرش، در خروجی سایت قرار نمی‌گیرد. برای انتشار، `.draft` را بردارید. محتوای پیش‌نویس در مخزن عمومی همچنان قابل خواندن است.
+- **ویرایش:** همان فایل‌های داخل پوشهٔ مقاله را ویرایش و آپلود کنید.
+- **حذف:** پوشهٔ مقاله را از مخزن حذف کنید؛ در انتشار بعدی از فهرست، نقشهٔ سایت و فایل‌های خروجی حذف می‌شود.
+- **خطای ورودی:** نبودن یکی از دو زبان، عنوان یا خلاصهٔ خالی، و تاریخ نامعتبر باعث توقف ساخت می‌شود. علت در بخش Actions مشخص است؛ نسخهٔ منتشرشدهٔ قبلی جایگزین نمی‌شود.
+- تاریخ آینده باعث زمان‌بندی انتشار نمی‌شود؛ برای جلوگیری از انتشار از `.draft` استفاده کنید.
+
+## پیش‌نمایش محلی، اختیاری
+
+این مرحله برای انتشار روزمره لازم نیست. برای آزمایش روی رایانه، با Python 3.12 یا جدیدتر:
+
+```powershell
+python scripts/build_site.py
+python -m http.server 8766 --bind 127.0.0.1 --directory _site
+```
+
+سپس `http://127.0.0.1:8766/blog/fa/` را باز کنید. پس از هر تغییر دوباره فرمان ساخت را اجرا و صفحه را تازه‌سازی کنید. پیش‌نمایش باید از `_site` باشد؛ فایل‌های ریشه ورودیِ سازنده هستند.
+
+آزمون سازنده:
+
+```powershell
+python -m unittest discover -s tests -v
+```
