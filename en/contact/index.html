@@ -39,6 +39,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  min-width: 0;
+  overflow-wrap: break-word;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 .contact-item-card:hover {
@@ -57,6 +59,8 @@
   font-weight: 500;
   color: var(--text);
   word-break: break-all;
+  overflow-wrap: anywhere;
+  max-width: 100%;
 }
 .contact-item-value a {
   color: var(--blue);
@@ -105,7 +109,6 @@
         </div>
 
         <div class="contact-item-card">
-          <span class="        <div class="contact-item-card">
           <span class="contact-item-title">Phone</span>
           <div class="contact-item-value">
             <a href="tel:+989032907405"><bdi>+989032907405</bdi></a>
@@ -116,25 +119,23 @@
         <div class="contact-item-card">
           <span class="contact-item-title">WhatsApp</span>
           <div class="contact-item-value">
-            <a href="https://wa.me/989032907405" target="_blank" rel="noopener"><bdi>+989032907405</bdi></a>
+            <a href="https://wa.me/989032907405" target="_blank" rel="noopener noreferrer"><bdi>+989032907405</bdi></a>
           </div>
           <p style="font-size: 0.85rem; color: var(--muted); margin-top: auto;">WhatsApp messaging</p>
         </div>
 
-contact-item-title">LinkedIn</span>
+        <div class="contact-item-card">
+          <span class="contact-item-title">LinkedIn</span>
           <div class="contact-item-value">
-            <a href="https://www.linkedin.com/in/ali-aboutalebiyan/" target="_blank" rel="noopener">ali-aboutalebiyan</a>
+            <a href="https://www.linkedin.com/in/ali-aboutalebiyan/" target="_blank" rel="noopener noreferrer">ali-aboutalebiyan</a>
           </div>
           <p style="font-size: 0.85rem; color: var(--muted); margin-top: auto;">Professional network &amp; career updates</p>
-        </div>
-
-          <p style="font-size: 0.85rem; color: var(--muted); margin-top: auto;">Open source code &amp; repositories</p>
         </div>
 
         <div class="contact-item-card">
           <span class="contact-item-title">Telegram</span>
           <div class="contact-item-value">
-            <a href="https://t.me/+989032907405" target="_blank" rel="noopener">+989032907405</a>
+            <a href="https://t.me/+989032907405" target="_blank" rel="noopener noreferrer">+989032907405</a>
           </div>
           <p style="font-size: 0.85rem; color: var(--muted); margin-top: auto;">Direct messaging &amp; quick chat</p>
         </div>
@@ -156,5 +157,37 @@ contact-item-title">LinkedIn</span>
 </footer>
 
 <script src="../../assets/script.js"></script>
+<script>
+(function () {
+  var btn = document.getElementById('copyEmail');
+  if (!btn || btn.dataset.copyEmailBound) return;
+  btn.dataset.copyEmailBound = '1';
+  btn.addEventListener('click', function () {
+    var email = btn.dataset.email || 'aliab.gda@gmail.com';
+    var label = btn.querySelector('.copy-label');
+    function done() {
+      if (!label) return;
+      var original = 'Copy Email';
+      label.textContent = btn.dataset.copiedLabel || 'Copied ✓';
+      setTimeout(function () { label.textContent = original; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(done).catch(function () { fallback(); });
+    } else {
+      fallback();
+    }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = email;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+  });
+})();
+</script>
 </body>
 </html>

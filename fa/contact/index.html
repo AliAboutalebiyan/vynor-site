@@ -40,6 +40,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  min-width: 0;
+  overflow-wrap: break-word;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 .contact-item-card:hover {
@@ -57,6 +59,8 @@
   font-weight: 500;
   color: var(--text);
   word-break: break-all;
+  overflow-wrap: anywhere;
+  max-width: 100%;
 }
 .contact-item-value a {
   color: var(--blue);
@@ -105,7 +109,6 @@
         </div>
 
         <div class="contact-item-card">
-          <span class="        <div class="contact-item-card">
           <span class="contact-item-title">تلفن</span>
           <div class="contact-item-value">
             <a href="tel:+989032907405"><bdi class="latin" lang="en">+989032907405</bdi></a>
@@ -116,25 +119,23 @@
         <div class="contact-item-card">
           <span class="contact-item-title">واتساپ</span>
           <div class="contact-item-value">
-            <a href="https://wa.me/989032907405" target="_blank" rel="noopener"><bdi class="latin" lang="en">+989032907405</bdi></a>
+            <a href="https://wa.me/989032907405" target="_blank" rel="noopener noreferrer"><bdi class="latin" lang="en">+989032907405</bdi></a>
           </div>
           <p style="font-size: 0.85rem; color: var(--muted); margin-top: auto;">پیام‌رسانی واتساپ</p>
         </div>
 
-contact-item-title">لینکدین</span>
+        <div class="contact-item-card">
+          <span class="contact-item-title">لینکدین</span>
           <div class="contact-item-value">
-            <a href="https://www.linkedin.com/in/ali-aboutalebiyan/" target="_blank" rel="noopener"><bdi class="latin" lang="en">ali-aboutalebiyan</bdi></a>
+            <a href="https://www.linkedin.com/in/ali-aboutalebiyan/" target="_blank" rel="noopener noreferrer"><bdi class="latin" lang="en">ali-aboutalebiyan</bdi></a>
           </div>
           <p style="font-size: 0.85rem; color: var(--muted); margin-top: auto;">شبکه حرفه‌ای و سوابق کاری</p>
-        </div>
-
-          <p style="font-size: 0.85rem; color: var(--muted); margin-top: auto;">کدهای متن‌باز و مخازن پروژه‌ها</p>
         </div>
 
         <div class="contact-item-card">
           <span class="contact-item-title">تلگرام</span>
           <div class="contact-item-value">
-            <a href="https://t.me/+989032907405" target="_blank" rel="noopener"><bdi class="latin" lang="en">+989032907405</bdi></a>
+            <a href="https://t.me/+989032907405" target="_blank" rel="noopener noreferrer"><bdi class="latin" lang="en">+989032907405</bdi></a>
           </div>
           <p style="font-size: 0.85rem; color: var(--muted); margin-top: auto;">ارتباط و پیام‌رسانی مستقیم</p>
         </div>
@@ -156,5 +157,37 @@ contact-item-title">لینکدین</span>
 </footer>
 
 <script src="../../assets/script.js"></script>
+<script>
+(function () {
+  var btn = document.getElementById('copyEmail');
+  if (!btn || btn.dataset.copyEmailBound) return;
+  btn.dataset.copyEmailBound = '1';
+  btn.addEventListener('click', function () {
+    var email = btn.dataset.email || 'aliab.gda@gmail.com';
+    var label = btn.querySelector('.copy-label');
+    function done() {
+      if (!label) return;
+      var original = 'کپی ایمیل';
+      label.textContent = btn.dataset.copiedLabel || 'کپی شد ✓';
+      setTimeout(function () { label.textContent = original; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(done).catch(function () { fallback(); });
+    } else {
+      fallback();
+    }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = email;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+  });
+})();
+</script>
 </body>
 </html>
